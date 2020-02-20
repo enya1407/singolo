@@ -1,16 +1,21 @@
 @font-face {
+    font-family: "Lato-Regular";
+    src: url("./assets/fonts/Lato-Regular.ttf");
+}
+
+@font-face {
     font-family: "Lato-Semibold";
-    src: url("./assets/fonts/lato/Lato-Semibold.ttf");
+    src: url("./assets/fonts/Lato-Semibold.ttf");
 }
 
 @font-face {
     font-family: "Lato-Black";
-    src: url("./assets/fonts/lato/Lato-Black.ttf");
+    src: url("./assets/fonts/Lato-Black.ttf");
 }
 
 @font-face {
     font-family: "Lato-Light";
-    src: url("./assets/fonts/lato/Lato-Light.ttf");
+    src: url("./assets/fonts/Lato-Light.ttf");
 }
 
 * {
@@ -129,24 +134,25 @@ body {
 }
 
 .iPhone-vertical {
-    background-image: url(./assets/img/iPhone_Vertical.png);
-    width: 260px;
+    background-image: url("./assets/img/iPhone_Vertical.png");
+    width: 240px;
     height: 488px;
     background-repeat: no-repeat;
+    margin-right: 18px;
 }
 
 .iPhone-horizontal {
     background-image: url("./assets/img/iPhone_Horizontal.png");
-    height: 247px;
-    width: 485px;
+    height: 246px;
+    width: 484px;
     background-repeat: no-repeat;
 }
 
 .services {
     background-color: #f2f2f2;
-    height: 494px;
+    height: 410px;
     border-bottom: solid 6px #ffffff;
-    padding: 44px 40px;
+    padding: 42px 40px;
 }
 
 .services__heading {
@@ -154,16 +160,16 @@ body {
     line-height: 18px;
     color: #666d89;
     font-family: "Lato-Black", sans-serif;
-    padding: 25px 0;
+    padding: 27px 0;
 }
 
 .services__description {
-    font-size: 18px;
-    line-height: 31px;
+    font-size: 19px;
+    line-height: 30px;
     color: #767e9e;
-    font-family: "Lato-Semibold", sans-serif;
+    font-family: "Lato-Regular", sans-serif;
     font-weight: 300;
-    letter-spacing: -0.39px;
+    letter-spacing: -0.77px;
     padding-bottom: 15px;
     text-align: justify;
 }
@@ -186,21 +192,21 @@ body {
     border-radius: 50%;
     border: 2px solid #666d89;
     fill: #666d89;
-    margin: 1px 0 0 1px;
+    margin: 2px 0 0 1px;
 }
 
 .icon__svg-pen {
-    padding-top: 12px;
+    padding-top: 11px;
     padding-left: 11px;
 }
 
 .icon__svg-bulb {
-    padding-top: 11px;
+    padding-top: 10px;
     padding-left: 15px;
 }
 
 .icon__svg-heart {
-    padding-top: 13px;
+    padding-top: 12px;
     padding-left: 10px;
 }
 
