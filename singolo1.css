@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Lato-Semibold";
-    src: url("/assets/fonts/lato/Lato-Semibold.ttf");
+    src: url("./assets/fonts/lato/Lato-Semibold.ttf");
 }
 
 @font-face {
     font-family: "Lato-Black";
-    src: url("/assets/fonts/lato/Lato-Black.ttf");
+    src: url("./assets/fonts/lato/Lato-Black.ttf");
 }
 
 @font-face {
     font-family: "Lato-Light";
-    src: url("/assets/fonts/lato/Lato-Light.ttf");
+    src: url("./assets/fonts/lato/Lato-Light.ttf");
 }
 
 * {
@@ -19,11 +19,11 @@
 
 body {
     margin: 0 auto;
+    height: 100vh;
 }
 
 .wrapper {
-    width: 1020px;
-    height: 100vh;
+    max-width: 1020px;
     margin: 0 auto;
 }
 
@@ -84,7 +84,7 @@ body {
     display: none;
 }
 
-.nav__link_selected {
+.nav__link_active {
     color: #f06c64;
 }
 
@@ -95,7 +95,7 @@ body {
 .slider {
     background-color: #f06c64;
     height: 594px;
-    padding: 0 32px 0 34px;
+    padding: 0 40px 0 42px;
     border-bottom: solid 6px #ea676b;
     display: flex;
     justify-content: space-between;
@@ -103,65 +103,43 @@ body {
 }
 
 .button {
-    width: 32px;
-    height: 57px;
-    background-color: #f06c64;
+    width: 16px;
+    height: 27px;
+    background-color: transparent;
     cursor: pointer;
     border: 0;
+    margin-bottom: 4px;
+}
+
+.button-left {
+    background-image: url(./assets/img/button.png);
+}
+
+.button-left:hover {
+    background-image: url(./assets/img/button-hover.png);
+}
+
+.button-right {
+    transform: rotate(180deg);
+    background-image: url(./assets/img/button.png);
+}
+
+.button-right:hover {
+    background-image: url(./assets/img/button-hover.png);
 }
 
 .iPhone-vertical {
-    margin: 0 29px 5px 0;
-    background-image: url("/assets/img/iPhone-vertical.png");
-    width: 240px;
-    height: 483px;
-    position: relative;
-}
-
-.iPhone-vertical__phone {
-    position: absolute;
-    bottom: 23px;
-    right: 24px;
-    width: 218px;
-    height: 461px;
-    background-image: url("/assets/img/iPhone-vertical_phone.png");
-}
-
-.iPhone-vertical__screen {
-    position: absolute;
-    top: 65px;
-    left: 14px;
-    width: 188px;
-    height: 333px;
-    background-image: url("/assets/img/iPhone-vertical_screen.png");
-    background-position: -14px -135px;
+    background-image: url(./assets/img/iPhone_Vertical.png);
+    width: 260px;
+    height: 488px;
+    background-repeat: no-repeat;
 }
 
 .iPhone-horizontal {
-    background-image: url("/assets/img/iPhone-horizontal.png");
-    height: 240px;
-    width: 483px;
-    position: relative;
-    margin: 0 1px 6px 0;
-}
-
-.iPhone-horizontal__phone {
-    position: absolute;
-    bottom: 23px;
-    right: 24px;
-    width: 461px;
-    height: 218px;
-    background-image: url("/assets/img/iPhone-horizontal_phone.png");
-}
-
-.iPhone-horizontal__screen {
-    position: absolute;
-    top: 14px;
-    left: 59px;
-    width: 333px;
-    height: 188px;
-    background-image: url("/assets/img/iPhone-horizontal_screen.png");
-    background-position: -125px -119px;
+    background-image: url("./assets/img/iPhone_Horizontal.png");
+    height: 247px;
+    width: 485px;
+    background-repeat: no-repeat;
 }
 
 .services {
@@ -183,10 +161,11 @@ body {
     font-size: 18px;
     line-height: 31px;
     color: #767e9e;
-    font-family: "Lato-Light", sans-serif;
+    font-family: "Lato-Semibold", sans-serif;
     font-weight: 300;
-    letter-spacing: -0.05px;
-    padding-bottom: 2px;
+    letter-spacing: -0.39px;
+    padding-bottom: 15px;
+    text-align: justify;
 }
 
 .services__list {
@@ -195,13 +174,13 @@ body {
     justify-content: space-between;
 }
 
-.services__item {
+.item-services {
     display: flex;
     width: 301px;
-    padding-top: 38px;
+    padding-top: 30px;
 }
 
-.services__svg-container {
+.item-services__icon {
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -210,28 +189,55 @@ body {
     margin: 1px 0 0 1px;
 }
 
-.services__svg {
-    padding-top: 11px;
+.icon__svg-pen {
+    padding-top: 12px;
     padding-left: 11px;
 }
 
-.services__item-text {
-    padding-left: 22px;
-    width: calc(100% - 77px);
+.icon__svg-bulb {
+    padding-top: 11px;
+    padding-left: 15px;
 }
 
-.item-text__heading {
+.icon__svg-heart {
+    padding-top: 13px;
+    padding-left: 10px;
+}
+
+.icon__svg-phone {
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+.icon__svg-bubble {
+    padding-top: 13px;
+    padding-left: 11px;
+}
+
+.icon__svg-star {
+    padding-top: 11px;
+    padding-left: 10px;
+}
+
+.item-services__text {
+    padding-left: 20px;
+    width: calc(100% - 77px);
+    overflow: hidden;
+}
+
+.item-services__heading {
     font-size: 18px;
     line-height: 18px;
     color: #666d89;
     font-family: "Lato-Black", sans-serif;
 }
 
-.item-text__description {
+.item-services__description {
     font-size: 12px;
     line-height: 22px;
     color: #767e9e;
-    font-family: "Lato-Light", sans-serif;
+    font-family: "Lato-Semibold", sans-serif;
     font-weight: 400;
     padding-top: 10px;
+    text-align: justify;
 }
