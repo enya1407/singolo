@@ -46,9 +46,10 @@ body {
     font-size: 25px;
     line-height: 6px;
     color: #ffffff;
-    font-family: "Lato-Semibold", sans-serif;
+    font-family: "Lato-regular", sans-serif;
     text-transform: uppercase;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.6px;
+    padding-bottom: 1px;
 }
 
 .logo__star {
@@ -100,7 +101,7 @@ body {
 .slider {
     background-color: #f06c64;
     height: 594px;
-    padding: 0 40px 0 42px;
+    padding: 0 41px 0 42px;
     border-bottom: solid 6px #ea676b;
     display: flex;
     justify-content: space-between;
