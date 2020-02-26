@@ -39,7 +39,7 @@ body {
     padding: 43px 30px;
 }
 
-.portfolio__heading {
+.section__heading {
     font-size: 30px;
     line-height: 18px;
     color: #666d89;
@@ -48,7 +48,7 @@ body {
     letter-spacing: 0.2px;
 }
 
-.portfolio__description {
+.section__description {
     font-size: 19px;
     line-height: 30px;
     color: #666d89;
@@ -153,4 +153,83 @@ body {
 
 .portfolio__img12 {
     margin: -60px 0 0 -36px;
+}
+
+.about-us {
+    background-color: #f2f2f2;
+    height: 642px;
+    border-bottom: solid 6px #ffffff;
+    padding: 42px 30px;
+}
+
+.container-cutaway {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 35px;
+}
+
+.cutaway {
+    width: 300px;
+    height: 450px;
+}
+
+.cutaway__photo {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.cutaway__name {
+    font-size: 18px;
+    line-height: 16px;
+    color: #666d89;
+    font-family: "Lato-Black", sans-serif;
+    margin-top: 19px;
+}
+
+.cutaway__description {
+    font-size: 12px;
+    line-height: 22px;
+    color: #767e9e;
+    font-family: "Lato-Semibold", sans-serif;
+    letter-spacing: -0.18px;
+    margin-top: 11px;
+}
+
+.messenger__container {
+    width: 152px;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.messenger__icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #666d89;
+}
+
+.messenger__icon:hover {
+    border-color: black;
+}
+
+.messenger__facebook {
+    background: url(./assets/img/facebook.png) no-repeat 11px 8px;
+}
+
+.messenger__google {
+    background: url(./assets/img/google.png) no-repeat 8px 8px;
+}
+
+.messenger__twitter {
+    background: url(./assets/img/twitter.png) no-repeat 7px 9px;
+}
+
+.messenger__linkedIn {
+    background: url(./assets/img/linkedIn.png) no-repeat 8px 8px;
 }
