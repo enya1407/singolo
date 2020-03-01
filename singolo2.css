@@ -166,7 +166,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 35px;
+    margin-top: 34px;
 }
 
 .cutaway {
@@ -181,25 +181,26 @@ body {
 }
 
 .cutaway__name {
-    font-size: 18px;
+    font-size: 19px;
     line-height: 16px;
     color: #666d89;
     font-family: "Lato-Black", sans-serif;
-    margin-top: 19px;
+    margin-top: 18px;
+    letter-spacing: -0.8px;
 }
 
 .cutaway__description {
     font-size: 12px;
-    line-height: 22px;
+    line-height: 21px;
     color: #767e9e;
     font-family: "Lato-Semibold", sans-serif;
-    letter-spacing: -0.18px;
+    letter-spacing: -0.13px;
     margin-top: 11px;
+    text-align: justify;
 }
 
 .messenger__container {
     width: 152px;
-    flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -233,3 +234,6 @@ body {
 .messenger__linkedIn {
     background: url(./assets/img/linkedIn.png) no-repeat 8px 8px;
 }
+
+
+/* content: "\00B7" точка в первом */
