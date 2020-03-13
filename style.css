@@ -22,6 +22,10 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0 auto;
     height: 100vh;
@@ -37,9 +41,12 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #2d303a;
-    height: 89px;
+    height: 91px;
     padding: 0 2.5em;
     border-bottom: solid 6px rgba(50, 55, 70, 1);
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .logo {
@@ -98,14 +105,27 @@ body {
     color: #f06c64;
 }
 
+.home {
+    position: relative;
+}
+
 .slider {
-    background-color: #f06c64;
-    height: 594px;
     padding: 0 41px 0 42px;
-    border-bottom: solid 6px #ea676b;
-    display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.slider1 {
+    height: 594px;
+    background-color: #f06c64;
+    border-bottom: solid 6px #ea676b;
+    display: flex;
+}
+
+.slider2 {
+    height: 600px;
+    background-image: url(./assets/img/Slider2.png);
+    display: none;
 }
 
 .button {
@@ -115,9 +135,13 @@ body {
     cursor: pointer;
     border: 0;
     margin-bottom: 4px;
+    outline: none;
 }
 
 .button-left {
+    position: absolute;
+    top: 50%;
+    left: 10px;
     background-image: url(./assets/img/button.png);
 }
 
@@ -126,6 +150,9 @@ body {
 }
 
 .button-right {
+    position: absolute;
+    top: 50%;
+    right: 10px;
     transform: rotate(180deg);
     background-image: url(./assets/img/button.png);
 }
@@ -140,6 +167,17 @@ body {
     height: 488px;
     background-repeat: no-repeat;
     margin-right: 18px;
+    position: relative;
+}
+
+.iPhone-vertical__off {
+    width: 189px;
+    height: 334px;
+    background-color: black;
+    position: absolute;
+    left: 14px;
+    top: 65px;
+    display: none;
 }
 
 .iPhone-horizontal {
@@ -147,6 +185,17 @@ body {
     height: 246px;
     width: 484px;
     background-repeat: no-repeat;
+    position: relative;
+}
+
+.iPhone-horizontal__off {
+    width: 334px;
+    height: 189px;
+    background-color: black;
+    position: absolute;
+    left: 59px;
+    top: 14px;
+    display: none;
 }
 
 .services {
@@ -154,6 +203,7 @@ body {
     height: 410px;
     border-bottom: solid 6px #ffffff;
     padding: 42px 40px;
+    position: relative;
 }
 
 .services__heading {
@@ -255,6 +305,7 @@ body {
     height: 778px;
     border-bottom: solid 6px #323746;
     padding: 43px 30px;
+    position: relative;
 }
 
 .portfolio__heading {
@@ -311,66 +362,25 @@ body {
 
 .portfolio__img-container {
     margin: 9px 0 0 0;
-    height: 621px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     overflow: hidden;
 }
 
+.portfolio__img_order {
+    order: 0;
+}
+
 .portfolio__img {
     width: 220px;
     height: 187px;
     margin: 10px;
-    overflow: hidden;
 }
 
-.portfolio__img1 {
-    margin: -11px 0 0 -8px;
-}
-
-.portfolio__img2 {
-    margin: -43px 0 0 -82px;
-}
-
-.portfolio__img3 {
-    margin: -1px 0 0 -11px;
-}
-
-.portfolio__img4 {
-    margin: -2px 0 0 -24px;
-}
-
-.portfolio__img5 {
-    margin: -16px 0 0 -10px;
-}
-
-.portfolio__img6 {
-    margin: -4px 0 0 -16px;
-}
-
-.portfolio__img7 {
-    margin: -39px 0 0 -31px;
-}
-
-.portfolio__img8 {
-    margin: -32px 0 0 -24px;
-}
-
-.portfolio__img9 {
-    margin: -2px 0 0 -16px;
-}
-
-.portfolio__img10 {
-    margin: -113px 0 0 -141px;
-}
-
-.portfolio__img11 {
-    margin: -175px 0 0 -144px;
-}
-
-.portfolio__img12 {
-    margin: -60px 0 0 -36px;
+.portfolio__img_active {
+    margin: 5px 5px 5px 5px;
+    border: #f06c64 solid 5px;
 }
 
 .about-us {
@@ -378,6 +388,7 @@ body {
     height: 642px;
     border-bottom: solid 6px #ffffff;
     padding: 42px 30px;
+    position: relative;
 }
 
 .about-us__heading {
@@ -481,6 +492,7 @@ body {
     height: 563px;
     border-bottom: solid 6px #ea676b;
     padding: 43px 30px;
+    position: relative;
 }
 
 .form-contact__heading {
@@ -639,4 +651,14 @@ body {
 
 .footer__icons {
     margin-top: 1px;
+}
+
+.beacon {
+    position: absolute;
+    top: -50px;
+}
+
+.beacon__home {
+    position: absolute;
+    top: -100px;
 }
