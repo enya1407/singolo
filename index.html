@@ -221,12 +221,14 @@
                 <p class="section__description form-contact__description">Fusce dapibus, tellus ac cursus commodo tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="form-contact__content">
                     <form class="form" method="post">
-                        <input type="text" class="form-fields" placeholder="Name (Required)" required><br>
-                        <input type="email" class="form-fields" placeholder="Email (Required)" required><br>
-                        <input type="text" class="form-fields" placeholder="Subject"><br>
-                        <textarea name="describe-project" cols="30" rows="10" class="form-fields form-fields__textarea" rows="4" placeholder="Describe your project in detail..."></textarea><br>
-                        <button class="submit">Submit</button>
+                        <input id="name" type="text" class="form-fields" placeholder="Name (Required)" required><br>
+                        <input id="email" type="email" class="form-fields" placeholder="Email (Required)" required><br>
+                        <input id="subject" type="text" class="form-fields" placeholder="Subject"><br>
+                        <textarea id="description" name="describe-project" cols="30" rows="10" class="form-fields form-fields__textarea" rows="4" placeholder="Describe your project in detail..."></textarea><br>
+                        <button class="submit btn">Submit</button>
+
                     </form>
+
                     <div class="contact">
                         <h3 class="contact__heading">Contact Information</h3>
                         <p class="contact__description">Quisque hendrerit purus dapibus, ornare nibh vitae, viver&shy;ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis</p>
@@ -240,6 +242,17 @@
                     </div>
                 </div>
             </section>
+            <div id="message-block" class="hidden">
+                <div id="message">
+                    <h3>Письмо отправлено</h3>
+                    <br>
+                    <p id="result-subject">Без темы</p>
+                    <br>
+                    <p id="result-description">Без описания </p>
+                    <br>
+                    <button class="submit close-btn">OK</button>
+                </div>
+            </div>
         </main>
         <footer class="footer">
             <span class="copyright">©Copyright 2013</span>
@@ -250,8 +263,9 @@
                 <a href="#" class="messenger__icon messenger__linkedIn"></a>
             </div>
         </footer>
-        </div>
+
         <script src="script.js"></script>
+        </div>
 </body>
 
 </html>

@@ -20,7 +20,6 @@ iPhoneVertical.onclick = function() {
   const style = window.getComputedStyle(iPhoneVerticalOff);
   const { display } = style;
   // const display = style.display;
-  console.log(iPhoneVerticalOff.style);
   if (display === "none") {
     iPhoneVerticalOff.style.display = "block";
   } else if (display === "block") {
@@ -29,8 +28,12 @@ iPhoneVertical.onclick = function() {
 };
 
 iPhoneHorizontal.onclick = function() {
-  if (iPhoneHorizontalOff.style.display === "none") {
+  const style = window.getComputedStyle(iPhoneHorizontalOff);
+  const { display } = style;
+  if (display === "none") {
     iPhoneHorizontalOff.style.display = "block";
+  } else if (display === "block") {
+    iPhoneHorizontalOff.style.display = "none";
   }
 };
 
@@ -65,7 +68,7 @@ const portfolioImgs = document.querySelectorAll(".portfolio__img_order");
 
 function shuffleImages() {
   portfolioImgs.forEach(el => {
-    el.style.order = "Math.floor(Math.random()*12)";
+    el.style.order = Math.floor(Math.random() * 12);
   });
 }
 portfolioMenu.addEventListener("click", event => {
@@ -92,3 +95,38 @@ borderOn.addEventListener("click", event => {
 });
 
 // отправка формы
+
+const button = document.querySelector(".btn");
+const close_button = document.querySelector(".close-btn");
+
+button.addEventListener("click", event => {
+  const subject = document.getElementById("subject").value.toString();
+  const description = document.getElementById("description").value.toString();
+  const name = document.getElementById("name").value.toString();
+  const email = document.getElementById("email").value.toString();
+
+  if (name && email) {
+    event.preventDefault();
+    if (subject) {
+      document.getElementById("result-subject").innerText = `Тема: ${subject}`;
+    } else {
+      document.getElementById("result-subject").innerText = `Без темы`;
+    }
+
+    if (description) {
+      document.getElementById(
+        "result-description",
+      ).innerText = `Описание: ${description}`;
+    } else {
+      document.getElementById("result-description").innerText = `Без описания`;
+    }
+
+    document.getElementById("message-block").classList.remove("hidden");
+  }
+});
+
+close_button.addEventListener("click", () => {
+  document.getElementById("result-subject").innerText = "";
+  document.getElementById("result-description").innerText = "";
+  document.getElementById("message-block").classList.add("hidden");
+});
