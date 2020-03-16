@@ -25,18 +25,28 @@
         </header>
         <main class="main">
             <section class="home">
-                <div id="home" class="beacon__home"></div>
-                <button class="button-left button"></button>
-                <div class="slider slider1">
-                    <div class="iPhone-vertical">
-                        <div class="iPhone-vertical__off"></div>
+                <div class="slider-container">
+                    <div class="slider slider1 slider_active ">
+                        <div class="slider1__flex">
+                            <div class="iPhone-vertical">
+                                <div class="iPhone-vertical__click"></div>
+                                <div class="iPhone-vertical__off"></div>
+                            </div>
+                            <div class="iPhone-horizontal">
+                                <div class="iPhone-horizontal__click"></div>
+                                <div class="iPhone-horizontal__off"></div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="iPhone-horizontal">
-                        <div class="iPhone-horizontal__off"></div>
-                    </div>
+                    <div class="slider slider2 "></div>
+
                 </div>
-                <div class="slider slider2"></div>
+
+                <button class="button-left button"></button>
                 <button class="button-right button"></button>
+
+                <div id="home" class="beacon__home"></div>
             </section>
             <section class="services">
                 <div id="services" class="beacon"></div>
@@ -221,7 +231,7 @@
                 <p class="section__description form-contact__description">Fusce dapibus, tellus ac cursus commodo tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="form-contact__content">
                     <form class="form" method="post">
-                        <input id="name" type="text" class="form-fields" placeholder="Name (Required)" required><br>
+                        <input id="name" type="text" class="form-fields " placeholder="Name (Required)" required><br>
                         <input id="email" type="email" class="form-fields" placeholder="Email (Required)" required><br>
                         <input id="subject" type="text" class="form-fields" placeholder="Subject"><br>
                         <textarea id="description" name="describe-project" cols="30" rows="10" class="form-fields form-fields__textarea" rows="4" placeholder="Describe your project in detail..."></textarea><br>
@@ -244,11 +254,11 @@
             </section>
             <div id="message-block" class="hidden">
                 <div id="message">
-                    <h3>Письмо отправлено</h3>
+                    <h3 class="message-block__header">Письмо отправлено</h3>
                     <br>
-                    <p id="result-subject">Без темы</p>
+                    <p id="result-subject" class="message-block__description">Без темы</p>
                     <br>
-                    <p id="result-description">Без описания </p>
+                    <p id="result-description" class="message-block__description">Без описания </p>
                     <br>
                     <button class="submit close-btn">OK</button>
                 </div>

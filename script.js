@@ -11,8 +11,8 @@ navMenu.addEventListener("click", event => {
 });
 
 // выключение телефонов
-const iPhoneVertical = document.querySelector(".iPhone-vertical");
-const iPhoneHorizontal = document.querySelector(".iPhone-horizontal");
+const iPhoneVertical = document.querySelector(".iPhone-vertical__click");
+const iPhoneHorizontal = document.querySelector(".iPhone-horizontal__click");
 const iPhoneVerticalOff = document.querySelector(".iPhone-vertical__off");
 const iPhoneHorizontalOff = document.querySelector(".iPhone-horizontal__off");
 
@@ -38,28 +38,76 @@ iPhoneHorizontal.onclick = function() {
 };
 
 // переключение слайдера
-let buttonLeft = document.querySelector(".button-left");
-let buttonRight = document.querySelector(".button-right");
-let slider = document.querySelectorAll(".slider");
-let i = 0;
+// let buttonLeft = document.querySelector(".button-left");
+// let buttonRight = document.querySelector(".button-right");
+// let slider = document.querySelectorAll(".slider");
+// let i = 0;
 
-buttonLeft.onclick = function() {
-  slider[i].style.display = "none";
-  i++;
-  if (i >= slider.length) {
-    i = 0;
-  }
-  slider[i].style.display = "flex";
-};
+// buttonLeft.onclick = function() {
+//   slider[i].style.display = "none";
+//   i++;
+//   if (i >= slider.length) {
+//     i = 0;
+//   }
+//   slider[i].style.display = "flex";
+// };
 
-buttonRight.onclick = function() {
-  slider[i].style.display = "none";
-  i++;
-  if (i >= slider.length) {
-    i = 0;
+// buttonRight.onclick = function() {
+//   slider[i].style.display = "none";
+//   i++;
+//   if (i >= slider.length) {
+//     i = 0;
+//   }
+//   slider[i].style.display = "flex";
+// };
+
+let items = document.querySelectorAll(".slider");
+let currentItem = 0;
+let isEnabled = true;
+
+function changeCurrentItem(n) {
+  currentItem = (n + items.length) % items.length;
+}
+
+function hideItem(direction) {
+  isEnabled = false;
+  items[currentItem].classList.add(direction);
+  items[currentItem].addEventListener("animationend", function() {
+    this.classList.remove("slider_active", direction);
+  });
+}
+
+function showItem(direction) {
+  items[currentItem].classList.add("next", direction);
+  items[currentItem].addEventListener("animationend", function() {
+    this.classList.remove("next", direction);
+    this.classList.add("slider_active");
+    isEnabled = true;
+  });
+}
+
+function previousItem(n) {
+  hideItem("to-right");
+  changeCurrentItem(n - 1);
+  showItem("from-left");
+}
+
+function nextItem(n) {
+  hideItem("to-left");
+  changeCurrentItem(n + 1);
+  showItem("from-right");
+}
+document.querySelector(".button-left").addEventListener("click", function() {
+  if (isEnabled) {
+    previousItem(currentItem);
   }
-  slider[i].style.display = "flex";
-};
+});
+
+document.querySelector(".button-right").addEventListener("click", function() {
+  if (isEnabled) {
+    nextItem(currentItem);
+  }
+});
 
 // портфолио меню
 

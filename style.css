@@ -107,26 +107,97 @@ body {
 
 .home {
     position: relative;
+    height: 598px;
 }
 
-.slider {
-    padding: 0 41px 0 42px;
-    justify-content: space-between;
-    align-items: center;
+.carousel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .slider1 {
-    height: 594px;
+    display: block;
+    min-height: 594px;
     background-color: #f06c64;
     border-bottom: solid 6px #ea676b;
+}
+
+.slider1__flex {
+    padding: 50px 41px 0 42px;
+    justify-content: space-between;
+    align-items: center;
     display: flex;
     justify-content: space-evenly;
 }
 
 .slider2 {
-    height: 600px;
+    min-height: 600px;
     background-image: url(./assets/img/Slider2.png);
+    display: block;
+}
+
+.slider {
     display: none;
+    position: relative;
+    margin: 0 auto;
+    animation: 0.9s ease-in-out;
+}
+
+.slider_active,
+.next {
+    display: block;
+}
+
+.next {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.to-left {
+    animation-name: left;
+}
+
+.to-right {
+    animation-name: right;
+    animation-direction: reverse;
+}
+
+.from-left {
+    animation-name: left;
+    animation-direction: reverse;
+}
+
+.from-right {
+    animation-name: right;
+}
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes right {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
 }
 
 .button {
@@ -170,13 +241,23 @@ body {
     position: relative;
 }
 
+.iPhone-vertical__click {
+    width: 216px;
+    height: 458px;
+    opacity: 0;
+    position: absolute;
+    border: 0;
+    border-radius: 30px;
+    z-index: 2;
+}
+
 .iPhone-vertical__off {
     width: 189px;
     height: 334px;
     background-color: black;
     position: absolute;
     left: 14px;
-    top: 64px;
+    top: 65px;
     display: none;
 }
 
@@ -188,8 +269,18 @@ body {
     position: relative;
 }
 
+.iPhone-horizontal__click {
+    width: 458px;
+    height: 216px;
+    opacity: 0;
+    position: absolute;
+    border: 0;
+    border-radius: 30px;
+    z-index: 2;
+}
+
 .iPhone-horizontal__off {
-    width: 334px;
+    width: 335px;
     height: 189px;
     background-color: black;
     position: absolute;
@@ -679,16 +770,26 @@ body {
 
 #message {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    text-align: center;
+    top: 45%;
+    left: 40%;
     background: #f06c64;
-    color: #f0d8d9;
     padding: 30px;
     z-index: 1;
     border: solid #d6564f 1px;
     border-radius: 5px;
-    width: 250px;
-    height: 150px;
+    width: 300px;
     opacity: 0.9;
+    text-align: center;
+    font-family: "Lato-Regular", sans-serif;
+    color: #f0d8d9;
+    overflow: auto;
+    max-height: 300px;
+}
+
+.message-block__header {
+    font-size: 20px;
+}
+
+.message-block__description {
+    font-size: 15px;
 }
