@@ -1,4 +1,27 @@
 // навигация
+document.addEventListener("scroll", onScroll);
+
+function onScroll(event) {
+  const curPos = window.scrollY;
+  const section = document.querySelectorAll("section");
+  const links = document.querySelectorAll(".nav__link");
+
+  section.forEach(el => {
+    if (
+      (el.offsetTop - 96 <= curPos &&
+        el.offsetTop - 96 + el.offsetHeight > curPos) ||
+      window.scrollY + window.innerHeight > 3526
+    ) {
+      links.forEach(a => {
+        a.classList.remove("nav__link_active");
+        if (el.getAttribute("id") === a.getAttribute("href").substring(1)) {
+          a.classList.add("nav__link_active");
+        }
+      });
+    }
+  });
+}
+
 const navMenu = document.querySelector(".nav__list");
 
 navMenu.addEventListener("click", event => {
@@ -174,7 +197,8 @@ button.addEventListener("click", event => {
 });
 
 close_button.addEventListener("click", () => {
-  document.getElementById("result-subject").innerText = "";
-  document.getElementById("result-description").innerText = "";
+  document.getElementById("result-subject").innerText = " ";
+  document.getElementById("result-description").innerText = " ";
   document.getElementById("message-block").classList.add("hidden");
+  document.querySelector(".form").reset();
 });
