@@ -1,4 +1,5 @@
 // навигация
+
 document.addEventListener("scroll", onScroll);
 
 function onScroll(event) {
@@ -22,16 +23,16 @@ function onScroll(event) {
   });
 }
 
-const navMenu = document.querySelector(".nav__list");
+// const navMenu = document.querySelector(".nav__list");
 
-navMenu.addEventListener("click", event => {
-  navMenu
-    .querySelectorAll(".nav__link")
-    .forEach(el => el.classList.remove("nav__link_active"));
-  if (event.target.classList.contains("nav__link")) {
-    event.target.classList.add("nav__link_active");
-  }
-});
+// navMenu.addEventListener("click", event => {
+//   navMenu
+//     .querySelectorAll(".nav__link")
+//     .forEach(el => el.classList.remove("nav__link_active"));
+//   if (event.target.classList.contains("nav__link")) {
+//     event.target.classList.add("nav__link_active");
+//   }
+// });
 
 // выключение телефонов
 const iPhoneVertical = document.querySelector(".iPhone-vertical__click");
@@ -202,3 +203,20 @@ close_button.addEventListener("click", () => {
   document.getElementById("message-block").classList.add("hidden");
   document.querySelector(".form").reset();
 });
+
+// бургер
+let burger = document.querySelector(".header__burger");
+let navHeader = document.querySelector(".nav__header");
+let logo = document.querySelector(".logo");
+
+burger.onclick = function() {
+  if (burger.classList.contains("active")) {
+    burger.classList.remove("active");
+    navHeader.classList.remove("active");
+    logo.classList.remove("active");
+  } else {
+    burger.classList.add("active");
+    navHeader.classList.add("active");
+    logo.classList.add("active");
+  }
+};
