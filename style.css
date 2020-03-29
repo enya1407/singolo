@@ -28,7 +28,16 @@ html {
 
 body {
     margin: 0 auto;
-    height: 100vh;
+    position: relative;
+}
+
+.shadow {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 55, 70, 0.8);
+    z-index: 2;
 }
 
 .wrapper {
@@ -67,8 +76,8 @@ body {
     font-family: "Lato-regular", sans-serif;
     text-transform: uppercase;
     letter-spacing: -0.6px;
-    padding-bottom: 1px;
-    z-index: 3;
+    padding-bottom: 0px;
+    z-index: 5;
 }
 
 .logo__star {
@@ -82,7 +91,7 @@ body {
 .nav__list {
     display: flex;
     list-style-type: none;
-    padding-top: 10px;
+    padding-top: 11px;
     z-index: 2;
     position: relative;
 }
@@ -152,7 +161,7 @@ body {
 }
 
 .slider1__flex {
-    padding: 50px 41px 0 42px;
+    padding: 53px 41px 0 42px;
     justify-content: space-between;
     align-items: center;
     display: flex;
@@ -258,10 +267,14 @@ body {
     background-image: url("./assets/img/iPhone_Vertical.png");
     background-size: cover;
     width: 240px;
-    height: 488px;
+    height: 483px;
     background-repeat: no-repeat;
     position: relative;
     transition-duration: 1s;
+}
+
+.iPhone-vertical:hover {
+    cursor: pointer;
 }
 
 .iPhone-vertical__click {
@@ -279,7 +292,7 @@ body {
     height: 334px;
     background-color: black;
     position: absolute;
-    left: 14px;
+    left: 13px;
     top: 65px;
     display: none;
 }
@@ -292,6 +305,10 @@ body {
     background-repeat: no-repeat;
     position: relative;
     transition-duration: 1s;
+}
+
+.iPhone-horizontal:hover {
+    cursor: pointer;
 }
 
 .iPhone-horizontal__click {
@@ -310,7 +327,7 @@ body {
     background-color: black;
     position: absolute;
     left: 59px;
-    top: 14px;
+    top: 13px;
     display: none;
 }
 
@@ -423,7 +440,7 @@ body {
 .portfolio {
     background-color: #2d303a;
     border-bottom: solid 6px #323746;
-    padding: 43px 36px 42px 29px;
+    padding: 41px 36px 42px 28px;
     position: relative;
     scroll-margin-top: 94px;
 }
@@ -491,15 +508,17 @@ body {
     padding: 5px;
 }
 
-.portfolio__img_order {
-    order: 0;
+.portfolio__img-container:hover {
+    cursor: pointer;
+}
+
+.portfolio__img-link {
     position: relative;
     top: 0px;
     left: 0px;
     width: 23.5%;
     margin: 0;
     margin-bottom: 14px;
-    transition-duration: 3s;
 }
 
 .portfolio__img {
@@ -513,7 +532,7 @@ body {
 .about {
     background-color: #f2f2f2;
     border-bottom: solid 6px #ffffff;
-    padding: 42px 30px 66px 30px;
+    padding: 42px 30px 68px 30px;
     position: relative;
     scroll-margin-top: 95px;
 }
@@ -583,7 +602,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 24px;
+    margin-top: 25px;
 }
 
 .messenger__icon {
@@ -648,11 +667,11 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    padding: 34px 0 10px 12px;
+    padding: 32px 0 10px 10px;
 }
 
 .form {
-    width: 64%;
+    width: 64.5%;
     transition-duration: 1s;
 }
 
@@ -721,7 +740,7 @@ body {
     line-height: 22px;
     color: #f0d8d9;
     font-family: "Lato-Semibold", sans-serif;
-    padding: 10px 0 20px 0;
+    padding: 11px 0 24px 0;
     text-align: justify;
     letter-spacing: -0.1px;
 }
@@ -843,7 +862,7 @@ body {
         height: 28.3em;
     }
     .slider1__flex {
-        padding: 42px 34px 0 35px;
+        padding: 42px 34px 0 33px;
     }
     .iPhone-vertical {
         width: 181px;
@@ -893,7 +912,7 @@ body {
         padding-bottom: 17px;
     }
     .portfolio {
-        padding: 42px 41px 48px 29px;
+        padding: 42px 36px 43px 27px;
     }
     .portfolio__description {
         padding-right: 50px;
@@ -901,9 +920,9 @@ body {
     }
     .portfolio__img-container {
         max-height: 1063px;
-        margin-top: 25px;
+        margin-top: 19px;
     }
-    .portfolio__img_order {
+    .portfolio__img-link {
         width: 31.4%;
         margin-bottom: 16px;
     }
@@ -935,18 +954,23 @@ body {
     .form-fields {
         margin-bottom: 12px;
         width: 100%;
+        padding-left: 8px;
     }
     .form {
-        width: 62%;
+        width: 63%;
     }
     .contact-block {
         width: 31.5%;
     }
     .form-fields__textarea {
         height: 148px;
+        padding: 7px 0px 0px 8px;
     }
     .contact-block__description {
         padding: 4px 0 9px 0;
+    }
+    .copyright {
+        font-size: 13px;
     }
     .footer__icons {
         margin-top: 2px;
@@ -954,15 +978,19 @@ body {
 }
 
 @media (max-width: 767px) {
+    .shadow.active {
+        display: block;
+    }
     .header {
-        height: 4.1em;
+        height: 4.4em;
+        border-bottom: none;
     }
     .logo {
         margin: 0 auto;
         font-size: 1.25em;
         padding-right: 13px;
-        padding-top: 8px;
-        transition: 1s;
+        padding-top: 4px;
+        transition: 0.3s;
     }
     .logo.active {
         padding-right: 166px;
@@ -973,10 +1001,10 @@ body {
         position: relative;
         width: 25px;
         height: 19px;
-        z-index: 3;
+        z-index: 5;
         left: -18.5px;
-        top: 3px;
-        transition: 1s;
+        top: 0px;
+        transition: 0.3s;
         cursor: pointer;
     }
     .header__burger::before,
@@ -1013,10 +1041,12 @@ body {
         height: 100%;
         background-color: #2d303a;
         padding: 70px 10px 20px 10px;
-        transition: 1s;
+        transition: 0.3s;
+        z-index: 4;
     }
     .nav__header.active {
         left: 0;
+        box-shadow: 17px 0px 50px -18px rgba(0, 0, 0, 0.54);
     }
     .nav__list {
         display: block;
@@ -1046,7 +1076,7 @@ body {
         right: 9px;
     }
     .slider1__flex {
-        padding: 20px 19px 0 17px;
+        padding: 20px 16px 0 15px;
     }
     .iPhone-vertical {
         width: 88px;
@@ -1079,11 +1109,17 @@ body {
     .services {
         padding: 8px 43px 25px 32px;
     }
+    .services__description {
+        padding-bottom: 2px;
+    }
+    .services__list {
+        display: block;
+    }
     .item-services {
         padding: 27px 0 0 0;
     }
     .portfolio {
-        padding: 25px 31px 29px 20px;
+        padding: 25px 26px 22px 18px;
         border-bottom: none;
     }
     .portfolio__description {
@@ -1091,17 +1127,17 @@ body {
     }
     .portfolio__img-container {
         max-height: 1114px;
-        margin-top: 25px;
+        margin-top: 19px;
     }
-    .portfolio__img_order {
+    .portfolio__img-link {
         width: 47.9%;
         margin-bottom: 10px;
     }
-    .portfolio__img_order:nth-child(n+9) {
+    .portfolio__img-link:nth-child(n+9) {
         display: none;
     }
     .about {
-        padding: 17px 27px 32px 26px;
+        padding: 17px 27px 32px 25px;
     }
     .container-cutaway {
         margin: 9px 3px 5px 5px;
@@ -1116,15 +1152,15 @@ body {
         margin-top: 15px;
     }
     .contact {
-        padding: 27px 43px 25px 19px;
-        max-height: 910px;
+        padding: 27px 43px 21px 19px;
+        max-height: 940px;
     }
     .form {
         width: 100%;
     }
     .form-fields {
-        width: 96%;
-        margin-bottom: 11px;
+        width: 97%;
+        margin-bottom: 12px;
     }
     .submit {
         width: 100%;

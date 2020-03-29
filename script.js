@@ -2,10 +2,11 @@
 
 document.addEventListener("scroll", onScroll);
 
+const links = document.querySelectorAll(".nav__link");
+
 function onScroll(event) {
   const curPos = window.scrollY;
   const section = document.querySelectorAll("section");
-  const links = document.querySelectorAll(".nav__link");
 
   section.forEach(el => {
     if (
@@ -136,14 +137,17 @@ document.querySelector(".button-right").addEventListener("click", function() {
 // портфолио меню
 
 const portfolioMenu = document.querySelector(".portfolio__list");
-const portfolioImgs = document.querySelectorAll(".portfolio__img_order");
 
 function shuffleImages() {
-  portfolioImgs.forEach(el => {
-    el.style.order = Math.floor(Math.random() * 12);
-  });
+  const parentNode = document.querySelector(".portfolio__img-container");
+  const collection = document.querySelectorAll(".portfolio__img-link");
+
+  parentNode.appendChild(collection[0]);
 }
+
 portfolioMenu.addEventListener("click", event => {
+  event.preventDefault();
+
   portfolioMenu
     .querySelectorAll(".portfolio__link")
     .forEach(el => el.classList.remove("portfolio__link_active"));
@@ -205,18 +209,25 @@ close_button.addEventListener("click", () => {
 });
 
 // бургер
-let burger = document.querySelector(".header__burger");
-let navHeader = document.querySelector(".nav__header");
-let logo = document.querySelector(".logo");
+const burger = document.querySelector(".header__burger");
+const navHeader = document.querySelector(".nav__header");
+const logo = document.querySelector(".logo");
+const shadow = document.querySelector(".shadow");
 
-burger.onclick = function() {
-  if (burger.classList.contains("active")) {
-    burger.classList.remove("active");
-    navHeader.classList.remove("active");
-    logo.classList.remove("active");
-  } else {
-    burger.classList.add("active");
-    navHeader.classList.add("active");
-    logo.classList.add("active");
-  }
-};
+burger.addEventListener("click", () => {
+  [burger, navHeader, logo, shadow].forEach(el =>
+    el.classList.toggle("active"),
+  );
+});
+links.forEach(el =>
+  el.addEventListener("click", () => {
+    [burger, navHeader, logo, shadow].forEach(el =>
+      el.classList.remove("active"),
+    );
+  }),
+);
+shadow.addEventListener("click", () => {
+  [burger, navHeader, logo, shadow].forEach(el =>
+    el.classList.toggle("active"),
+  );
+});
